@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include <conio.h>
+
+/*
+PPS Innovative Examination
+Shashank Singh 9
+Shivanshu Singh 10
+Utsav Raj Singh 11
+Utsav Anand Singh 12
+COMP C
+*/
+
+//-----------------------------------------------------------------------------
+
+int beneficiary(int bnf,int bnf2) 	//Beneficiary Account Number function	
+//function to check if beneficiary account number are matching or not
+{
+	int amount;
+	
+	if (bnf == bnf2)
+	{
+		printf("Please enter the amount(Rs.):");
+		scanf("%d",&amount);
+		
+		printf("\nPlease wait,");
+		printf("\nYour transaction is being processed...");
+		printf("\n");
+		printf("\nThe bank shall transfer the amount to the");
+		printf("\naccount number quoted by you. The bank shall");
+		printf("\nnot be responsible for any incorrect amount");
+		printf("\nor incorrect account number quoted by you");
+		printf("\n");
+		printf("\nYour transaction was successful.");
+		printf("\nSorry, unable to print receipt.");
+	}
+	
+	else
+	{
+	printf("\nIncorrect!");
+	Fund_Transfer();
+	}
+}
+
+int Fund_Transfer()	//Fund Transfer function
+{
+	int pin,bnf,bnf2;
+	
+	printf("\nEnter your PIN:");
+	scanf("%d",&pin);
+	
+	//if loop will execute which will check data from a file
+	printf("\nPlease enter 15 digit beneficiary account number:");
+	scanf("%d",&bnf);
+	printf("Please re-enter 15 digit beneficiary account number:");
+	scanf("%d",&bnf2);
+	
+	beneficiary(bnf,bnf2);	
+	
+}
+
+//-----------------------------------------------------------------------------
+
+int main()		//Main function
+{
+	int choice;
+	
+	printf("\n<name_of_bank>");
+	printf("\n");
+	printf("\nATM");
+	printf("\n");
+	printf("\n1.Change of PIN");
+	printf("\n2.Balance Enquiry");
+	printf("\n3.Money Withdrawal");
+	printf("\n4.Fund Transfer");
+	printf("\n5.Exit");
+	printf("\n");
+	printf("\nSelect a service:");
+	scanf("%d",&choice);
+	
+	switch (choice)
+	{
+		case 1:
+			//Change of PIN will execute
+			break;
+			
+		case 2:
+			//Balance Enquiry function will execute
+			break;
+			
+		case 3:
+			//Money Withdrawal function will execute
+			break;
+			
+		case 4:
+			//Fund Transfer function will execute
+			Fund_Transfer();
+			break;
+			
+		case 5:
+			//Exit
+			printf("\nThank you for choosing <name_of_bank>");
+			break;	
+	}
+}
+
+//-----------------------------------------------------------------------------
